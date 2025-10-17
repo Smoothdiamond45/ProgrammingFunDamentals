@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=UseCalculator
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ UseCalculator\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=UseCalculator()
+comment2.params=a\ b\ c
+comment2.target=void\ calculate(int,\ int,\ int)
+numComments=3
