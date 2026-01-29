@@ -1,0 +1,3 @@
+sayRandomFortune()	none	void	Prints a pre-written fortune .
+personalFortune(String name)	name	void	Prints a silly or uplifting fortune that uses the person’s name.
+futurePrediction(int age)	age	String	Returns a message predicting something about the person 10 years from now.

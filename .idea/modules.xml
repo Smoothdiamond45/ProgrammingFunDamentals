@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Array-Recap/Array-Recap.iml" filepath="$PROJECT_DIR$/Array-Recap/Array-Recap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Array/ArrayExercises/ArrayExercises.iml" filepath="$PROJECT_DIR$/Array/ArrayExercises/ArrayExercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GymAppV1.0/GymAppV1.0.iml" filepath="$PROJECT_DIR$/GymAppV1.0/GymAppV1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProgrammingFunDamentals.iml" filepath="$PROJECT_DIR$/ProgrammingFunDamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week 1/Week 1.iml" filepath="$PROJECT_DIR$/Week 1/Week 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week 2/Week 2.iml" filepath="$PROJECT_DIR$/Week 2/Week 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week 3/Week 3.iml" filepath="$PROJECT_DIR$/Week 3/Week 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week 4/Week 4.iml" filepath="$PROJECT_DIR$/Week 4/Week 4.iml" />
+    </modules>
+  </component>
+</project>

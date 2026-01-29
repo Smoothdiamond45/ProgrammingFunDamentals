@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+public class Driver
+{
+    // instance variables - replace the example below with your own
+    private String name;
+    private String address;
+    private String dateOfBirth;
+    private double height;
+    Scanner myObj = new Scanner(System.in);
+   
+
+    public Driver()
+    {
+        System.out.println("Please enter your full name");
+        String name = myObj.nextLine();
+        
+        System.out.println("Please enter your address");
+        String address = myObj.nextLine();
+        
+        System.out.println("Please enter your date of birth");
+        String dateOfBirth = myObj.nextLine();
+        
+        System.out.println("Please enter your rough height");
+        double height = myObj.nextDouble();
+        
+        
+        System.out.println("Entered Details");
+        System.out.println("-------------------");
+        System.out.println("Name is: " + name);
+        System.out.println("Address is: " + address);
+        System.out.println("Date of Birth is: " + dateOfBirth);
+        System.out.println("Height: " + height);
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+   
+    
+}
