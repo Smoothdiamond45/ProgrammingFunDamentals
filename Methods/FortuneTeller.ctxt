@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=FortuneTeller
-comment1.params=
-comment1.target=void\ sayRandomFortune()
-comment2.params=name
-comment2.target=void\ personalFortune(java.lang.String)
-comment3.params=age
-comment3.target=java.lang.String\ futurePrediction(int)
-numComments=4
