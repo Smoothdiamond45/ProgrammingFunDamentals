@@ -2,7 +2,6 @@
 import java.util.Scanner;
 public class Driver
 {
-    // instance variables - replace the example below with your own
     private String name;
     private String address;
     private String dateOfBirth;
@@ -32,13 +31,6 @@ public class Driver
         System.out.println("Date of Birth is: " + dateOfBirth);
         System.out.println("Height: " + height);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
    
     
 }
