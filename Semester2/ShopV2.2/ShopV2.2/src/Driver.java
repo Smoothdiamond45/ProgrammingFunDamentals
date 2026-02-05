@@ -1,7 +1,5 @@
 import java.util.Scanner;
 public class Driver{
-
-    private Scanner input = new Scanner(System.in);
     private Store store;
 
     public static void main(String[] args) {
@@ -9,22 +7,24 @@ public class Driver{
     }
 
     public Driver() {
-        processOrder();
+        store = new Store();
         runMenu();
     }
 
-    private int mainMenu(){
-        System.out.print("""
-               Shop Menu
-               ---------
-                  1) List the Products
-                  2) List the current products
-                  3) Display average product unit cost
-                  4) Display cheapest product
-                  5) List products that are more expensive than a given price
-                  0) Exit
-               ==>> """);
-        int option = input.nextInt();
+    private int mainMenu() {
+        int option = ScannerInput.readNextInt("""
+                Shop Menu
+                ---------
+                   1) Add a Product
+                   2) List the Products
+                   ------------------------------------
+                   3) List the current Products
+                   4) Display average product unit cost
+                   5) Display cheapest product
+                   6) List products that are more expensive than a given price
+                   ---------------------------------------------------------------------
+                   0) Exit
+                ==>> """);
         return option;
     }
 
@@ -34,18 +34,17 @@ public class Driver{
         while (option != 0){
 
             switch (option){
-                case 1 -> printProducts();
-                case 2 -> printCurrentProducts();
-                case 3 -> printAverageProductPrice();
-                case 4 -> printCheapestProduct();
-                case 5 -> printProductsAboveAPrice();
-                default -> System.out.println("Invalid option entered: " + option);
+                case 1 -> addProduct();
+                case 2 -> printProducts();
+                case 3 -> printCurrentProducts();
+                case 4 -> printAverageProductPrice();
+                case 5 -> printCheapestProduct();
+                case 6 -> printProductsAboveAPrice();
+                default -> System.out.println("Invalid option: " + option);
             }
 
             //pause the program so that the user can read what we just printed to the terminal window
-            System.out.println("\nPress enter key to continue...");
-            input.nextLine();
-            input.nextLine(); //second read is required - bug in Scanner class; a String read is ignored straight after reading an int.
+            ScannerInput.readNextLine("\nPress the enter key to continue");
 
             //display the main menu again
             option = mainMenu();
@@ -57,34 +56,16 @@ public class Driver{
     }
 
 
-    private void processOrder(){
-        //find out from the user how many products they would like to order
-        System.out.print("How many Products would you like to have in your Store?  ");
-        int numberProducts = input.nextInt();
-
-        store = new Store(numberProducts);
-
-        //ask the user for the details of the products and add them to the order
-        for (int i = 0; i < numberProducts; i++){
-            addProduct();
-        }
-    }
-
     //gather the product data from the user and create a new product object.
     private void addProduct(){
-        input.nextLine();  //dummy read of String to clear the buffer - bug in Scanner class.
 
-        System.out.print("Enter the Product Name:  ");
-        String productName = input.nextLine();
-        System.out.print("Enter the Product Code:  ");
-        int productCode = input.nextInt();
-        System.out.print("Enter the Unit Cost:  ");
-        double unitCost = input.nextDouble();
+        String productName = ScannerInput.readNextLine("Enter the Product Name:  ");
+        int productCode = ScannerInput.readNextInt("Enter the Product Code:  ");
+        double unitCost = ScannerInput.readNextDouble("Enter the Unit Cost:  ");
 
         //Ask the user to type in either a Y or an N.  This is then
         //converted to either a True or a False (i.e. a boolean value).
-        System.out.print("Is this product in your current line (y/n): ");
-        char currentProduct = input.next().charAt(0);
+        char currentProduct = ScannerInput.readNextChar("Is this product in your current line (y/n): ");
         boolean inCurrentProductLine = false;
         if ((currentProduct == 'y') || (currentProduct == 'Y'))
             inCurrentProductLine = true;
@@ -97,7 +78,8 @@ public class Driver{
             System.out.println("No Product Added");
         }
     }
-    
+
+
     //print the product (the toString method is automatically called).
     private void printProducts(){
         System.out.println("List of Products are:");
@@ -134,8 +116,7 @@ public class Driver{
 
     //ask the user to enter a price and print out all products costing that price or more.
     private void printProductsAboveAPrice(){
-        System.out.print("View the products costing more than this price:  ");
-        double price = input.nextDouble();
+        double price = ScannerInput.readNextDouble("View the products costing more than this price: ");
         System.out.println(store.listProductsAboveAPrice(price));
     }
 
