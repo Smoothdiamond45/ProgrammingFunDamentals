@@ -1,7 +1,14 @@
+package main;
+import models.Product;
+import controllers.Store;
+import utils.ScannerInput;
+import utils.Utilities;
+import controllers.Store;
+
 import javax.swing.text.Utilities;
 
 /**
- * This class runs the application and handles the Product I/O
+ * This class runs the application and handles the models.Product I/O
  *
  * @author Mairead Meagher, Siobhan Drohan
  * @version 3.0
@@ -25,8 +32,8 @@ public class Driver{
                ---------
                   1) Add a product
                   2) List the Products
-                  3) Update a Product
-                  4) Delete a Product
+                  3) Update a models.Product
+                  4) Delete a models.Product
                   ----------------------------
                   5) List the current products
                   6) Display average product unit cost
@@ -75,8 +82,8 @@ public class Driver{
     //gather the product data from the user and create a new product object - add it to the collection.
     private void addProduct(){
 
-        String productName = ScannerInput.readNextLine("Enter the Product Name:  ");
-        int productCode = ScannerInput.readNextInt("Enter the Product Code:  ");
+        String productName = ScannerInput.readNextLine("Enter the models.Product Name:  ");
+        int productCode = ScannerInput.readNextInt("Enter the models.Product Code:  ");
         double unitCost = ScannerInput.readNextDouble("Enter the Unit Cost:  ");
 
         //Ask the user to type in either a Y or an N.  This is then
@@ -86,10 +93,10 @@ public class Driver{
 
         boolean isAdded = store.add(new Product(productName, productCode, unitCost, inCurrentProductLine));
         if (isAdded){
-            System.out.println("Product Added Successfully");
+            System.out.println("models.Product Added Successfully");
         }
         else{
-            System.out.println("No Product Added");
+            System.out.println("No models.Product Added");
         }
     }
 
@@ -105,7 +112,7 @@ public class Driver{
         if (store.numberOfProducts() > 0){
             //only ask the user to choose the product to delete if products exist
             int indexToDelete = ScannerInput.readNextInt("Enter the index of the product to delete ==> ");
-            //pass the index of the product to Store for deleting and check for success.
+            //pass the index of the product to controllers.Store for deleting and check for success.
             Product productToDelete = store.deleteProduct(indexToDelete);
             if (productToDelete != null){
                 System.out.println("Delete Successful! Deleted product: " + productToDelete.getProductName());
@@ -125,8 +132,8 @@ public class Driver{
             //only ask the user to choose the product to update if products exist
             int indexToUpdate = ScannerInput.readNextInt("Enter the index of the product to update ==> ");
             if (store.isValidIndex(indexToUpdate)){
-                String productName = ScannerInput.readNextLine("Enter the Product Name:  ");
-                int productCode = ScannerInput.readNextInt("Enter the Product Code:  ");
+                String productName = ScannerInput.readNextLine("Enter the models.Product Name:  ");
+                int productCode = ScannerInput.readNextInt("Enter the models.Product Code:  ");
                 double unitCost = ScannerInput.readNextDouble("Enter the Unit Cost:  ");
 
 
@@ -135,7 +142,7 @@ public class Driver{
                 char currentProduct = ScannerInput.readNextChar("Is this product in your current line (y/n): ");
                 boolean inCurrentProductLine = Utilities.YNtoBoolean(currentProduct);
 
-                //pass the index of the product and the new product details to Store for updating and check for success.
+                //pass the index of the product and the new product details to controllers.Store for updating and check for success.
                 if (store.updateProduct(indexToUpdate, new Product(productName, productCode, unitCost, inCurrentProductLine))){
                     System.out.println("Update Successful");
                 }

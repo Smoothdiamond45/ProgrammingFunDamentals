@@ -1,3 +1,5 @@
+package utils;
+
 public class Utilities {
 
     public static double toTwoDecimalPlaces(double number) {

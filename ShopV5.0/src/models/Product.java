@@ -1,5 +1,7 @@
+package models;
+
 /**
- * A scaled down version of a Product class
+ * A scaled down version of a models.Product class
  *
  * @author Mairead Meagher, Siobhan Drohan
  * @version 3.0
@@ -12,7 +14,7 @@ public class Product {
     private boolean inCurrentProductLine = false;
 
     /**
-     * Constructor for objects of class Product
+     * Constructor for objects of class models.Product
      * @param productName Name of the product
      * @param productCode Code of the product
      * @param unitCost Unit cost of the product
@@ -28,7 +30,7 @@ public class Product {
     //getters
     //-------
     /**
-     * Returns the Product Name
+     * Returns the models.Product Name
      */
     public String getProductName(){
         return productName;
@@ -42,7 +44,7 @@ public class Product {
     }
 
     /**
-     * Returns the Product Code
+     * Returns the models.Product Code
      */
     public int getProductCode() {
         return productCode;
@@ -59,16 +61,16 @@ public class Product {
     //setters
     //-------
     /**
-     * Updates the Product Code to the value passed as a parameter
-     * @param productCode The new Product Code
+     * Updates the models.Product Code to the value passed as a parameter
+     * @param productCode The new models.Product Code
      */
     public void setProductCode(int productCode) {
         this.productCode = productCode;
     }
 
     /**
-     * Updates the Product Name to the value passed as a parameter
-     * @param productName The new Product Name
+     * Updates the models.Product Name to the value passed as a parameter
+     * @param productName The new models.Product Name
      */
     public void setProductName(String productName) {
         this.productName = productName;
@@ -96,7 +98,7 @@ public class Product {
      */
     public String toString()
     {
-        return "Product description: " + productName
+        return "models.Product description: " + productName
                 + ", product code: " + productCode
                 + ", unit cost: " + unitCost
                 + ", currently in product line: " + inCurrentProductLine;

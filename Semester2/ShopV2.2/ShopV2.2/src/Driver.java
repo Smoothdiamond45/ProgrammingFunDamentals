@@ -15,7 +15,7 @@ public class Driver{
         int option = ScannerInput.readNextInt("""
                 Shop Menu
                 ---------
-                   1) Add a Product
+                   1) Add a models.Product
                    2) List the Products
                    ------------------------------------
                    3) List the current Products
@@ -59,8 +59,8 @@ public class Driver{
     //gather the product data from the user and create a new product object.
     private void addProduct(){
 
-        String productName = ScannerInput.readNextLine("Enter the Product Name:  ");
-        int productCode = ScannerInput.readNextInt("Enter the Product Code:  ");
+        String productName = ScannerInput.readNextLine("Enter the models.Product Name:  ");
+        int productCode = ScannerInput.readNextInt("Enter the models.Product Code:  ");
         double unitCost = ScannerInput.readNextDouble("Enter the Unit Cost:  ");
 
         //Ask the user to type in either a Y or an N.  This is then
@@ -70,12 +70,12 @@ public class Driver{
         if ((currentProduct == 'y') || (currentProduct == 'Y'))
             inCurrentProductLine = true;
 
-        boolean isAdded = store.add(new Product(productName, productCode, unitCost, inCurrentProductLine));
+        boolean isAdded = store.add(new models.Product(productName, productCode, unitCost, inCurrentProductLine));
         if (isAdded){
-            System.out.println("Product Added Successfully");
+            System.out.println("models.Product Added Successfully");
         }
         else{
-            System.out.println("No Product Added");
+            System.out.println("No models.Product Added");
         }
     }
 
@@ -105,7 +105,7 @@ public class Driver{
 
     //print out the product name that is the cheapest of those stored in the array
     private void printCheapestProduct(){
-        Product cheapestProduct = store.cheapestProduct();
+        models.Product cheapestProduct = store.cheapestProduct();
         if (cheapestProduct != null) {
             System.out.println("The cheapest product is:  " + cheapestProduct.getProductName());
         }
