@@ -3,9 +3,6 @@ import models.Product;
 import controllers.Store;
 import utils.ScannerInput;
 import utils.Utilities;
-import controllers.Store;
-
-import javax.swing.text.Utilities;
 
 /**
  * This class runs the application and handles the models.Product I/O
