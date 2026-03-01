@@ -24,4 +24,4 @@ public class Utilities {
         return strToCheck.length() <= maxLength;
     }
 
-}
+} 
