@@ -2,7 +2,7 @@ package models;
 
 import utils.Utilities;
 
-public class PhotoPost extends LikedPost{
+public class PhotoPost extends LikedPost {
 
     private String caption = "";
     private String filename = "";
@@ -15,7 +15,7 @@ public class PhotoPost extends LikedPost{
 
     @Override
     public String displayCondensed() {
-        return super.displayCondensed() + ": Photo(" + caption +  ", " + filename + ")";
+        return super.displayCondensed() + ": Photo(" + caption + ", " + filename + ")";
     }
 
     public String getCaption() {
@@ -41,11 +41,11 @@ public class PhotoPost extends LikedPost{
     public String display() {
         String str = super.display();
 
-        if (!caption.isEmpty()){
+        if (!caption.isEmpty()) {
             str += "\t" + caption + "\n";
         }
 
-        if (!filename.isEmpty()){
+        if (!filename.isEmpty()) {
             str += "\t" + filename + "\n";
         }
 

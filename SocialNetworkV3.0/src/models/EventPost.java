@@ -7,7 +7,7 @@ public class EventPost extends Post {
     private String eventName = "";
     private double eventCost = 0;
 
-    public EventPost (String author, String eventName, double eventCost){
+    public EventPost(String author, String eventName, double eventCost) {
         super(author);
         this.eventName = Utilities.truncateString(eventName, 35);
         setEventCost(eventCost);
@@ -33,7 +33,7 @@ public class EventPost extends Post {
     }
 
     public void setEventCost(double eventCost) {
-        if (Utilities.validRange(eventCost, 0, 99999)){
+        if (Utilities.validRange(eventCost, 0, 99999)) {
             this.eventCost = eventCost;
         }
     }
@@ -41,7 +41,7 @@ public class EventPost extends Post {
     public String display() {
         String str = super.display();
 
-        if (!eventName.isEmpty()){
+        if (!eventName.isEmpty()) {
             str += "\tEvent name: " + eventName + "\n";
             str += "\tEvent cost: " + eventCost + "\n";
         }
