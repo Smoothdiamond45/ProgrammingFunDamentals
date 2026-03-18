@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Semester2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SocialNetworkV2.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/SocialNetworkV1.0.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
